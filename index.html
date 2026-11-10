@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozinha Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1> Cozinha Fácil</h1>
+        <nav id="menu" hidden><button data-tela="inicio">Início</button><button
+                data-tela="favoritos">Favoritos</button><button data-tela="minhas">Minhas receitas</button><button
+                data-tela="criar">Criar receita</button><button id="sair">Sair</button></nav>
+    </header>
+    <section id="login" class="painel login">
+        <h2>Bem-vindo ao Cozinha Fácil!</h2>
+        <p>Entre ou crie sua conta para compartilhar receitas.</p>
+        <form id="formLogin"><label>Usuário<input id="usuario" required minlength="3"></label><label>Senha<input
+                    id="senha" type="password" required minlength="3"></label>
+            <div class="acoes"><button class="principal" type="submit">Entrar</button><button type="button"
+                    id="cadastrar">Criar conta</button></div>
+        </form>
+        <p id="mensagem" class="mensagem"></p>
+    </section>
+    <main id="app" hidden>
+        <section id="inicio" class="tela ativa">
+            <div class="intro">
+                <h2>Encontre sua próxima receita!</h2>
+                <p>Pesquise pratos ou explore as receitas compartilhadas.</p><input id="pesquisa"
+                    placeholder="Digite o nome de uma receita...">
+            </div>
+            <h2>Receitas</h2>
+            <div id="listaReceitas" class="grade"></div>
+        </section>
+        <section id="favoritos" class="tela">
+            <h2> Seus favoritos</h2>
+            <div id="listaFavoritos" class="grade"></div>
+        </section>
+        <section id="minhas" class="tela">
+            <h2>Minhas receitas</h2>
+            <div id="listaMinhas" class="grade"></div>
+        </section>
+        <section id="criar" class="tela">
+            <div class="painel formulario">
+                <h2>Cadastrar uma receita</h2>
+                <form id="formReceita"><label>Nome da receita<input id="nome" required></label><label>Link da imagem
+                        (opcional)<input id="imagem" type="url"
+                            placeholder="https://..."></label><label>Ingredientes<textarea id="ingredientes" required
+                            placeholder="Um ingrediente por linha"></textarea></label><label>Modo de preparo<textarea
+                            id="preparo" required></textarea></label><button class="principal">Salvar receita</button>
+                </form>
+            </div>
+        </section>
+        <section id="detalhes" class="tela"><button id="voltar">← Voltar</button>
+            <div id="conteudoDetalhes"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Cozinha Fácil — Receitas simples para o dia a dia.</p>
+    </footer>
+</body>
+
+</html>
